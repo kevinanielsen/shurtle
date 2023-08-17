@@ -1,24 +1,23 @@
-import { Schema, model } from "mongoose";
+import mongoose, { Schema, Document, Model } from "mongoose";
 
-export interface IUrl {
+export interface IUrl extends Document {
   created: Date;
   originalUrl: string;
   newUrl: string;
   creatorIP: string;
 }
 
-const UrlSchema = new Schema<IUrl>({
+const UrlSchema: Schema = new Schema({
   created: {
     type: Date,
+    required: true,
     default: Date.now,
   },
-  originalUrl: String,
-  newUrl: String,
-  creatorIP: String,
+  originalUrl: { type: String, required: true, unique: true },
+  newUrl: { type: String, required: true, unique: true },
+  creatorIP: { type: String, required: true },
 });
 
-const Url = model<IUrl>("Url", UrlSchema);
+const Url: Model<IUrl> = mongoose.model<IUrl>("Url", UrlSchema);
 
-module.exports = {
-  Url: Url,
-};
+export default Url;

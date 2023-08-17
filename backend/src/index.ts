@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
 const express = require("express");
 const mongoose = require("mongoose");
-
-import UrlRouter = require("./urls/shorten");
+const ShortenRouter = require("./urls/shorten");
+const UrlRouter = require("./urls/url");
+const RedirectRouter = require("./redirect");
 
 require("dotenv").config();
 
@@ -27,13 +28,15 @@ main();
 
 app.use(express.static("public"));
 app.use(express.json()); // for parsing application/json
-app.use("/urls", UrlRouter);
+app.use("/urls/shorten", ShortenRouter);
+app.use("/urls/url", UrlRouter);
+app.use("/", RedirectRouter);
 
 app.get("/", (req: Request, res: Response) => {
   const ipAdress = req.socket.remoteAddress;
-  res.send(`Your IP is: ${ipAdress}`).status(200);
+  res.json(`Your IP is: ${ipAdress}`).status(200);
 });
 
 app.listen(PORT, () => {
-  console.log(`App is listening at port ${PORT}`);
+  console.log(`App is listening at port ${PORT} \nhttp://localhost:${PORT}`);
 });
