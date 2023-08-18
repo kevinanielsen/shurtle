@@ -10,7 +10,11 @@ export default defineConfig({
       injectRegister: "auto",
       registerType: "autoUpdate",
       devOptions: { enabled: true },
-      includeAssets: ["/favicon.ico", "/apple-touch-icon.png", "/mask-icon.png"],
+      includeAssets: [
+        "/favicon.ico",
+        "/apple-touch-icon.png",
+        "/mask-icon.png",
+      ],
       manifest: {
         short_name: "Shurtle",
         name: "Shurtle URL-Shortener",

@@ -1,14 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        "dark": "#061826",
-        "main": {
+        dark: "#061826",
+        main: {
           50: "hsl(200, 95%, 95%)",
           100: "hsl(200, 95%, 90%)",
           200: "hsl(200, 95%, 80%)",
@@ -20,7 +17,7 @@ export default {
           800: "hsl(200, 95%, 20%)",
           900: "hsl(200, 95%, 10%)",
         },
-        "accent": {
+        accent: {
           50: "hsl(168, 62%, 95%)",
           100: "hsl(168, 62%, 90%)",
           200: "hsl(168, 62%, 80%)",
@@ -31,10 +28,9 @@ export default {
           700: "hsl(168, 62%, 30%)",
           800: "hsl(168, 62%, 20%)",
           900: "hsl(168, 62%, 10%)",
-        }
-      }
+        },
+      },
     },
   },
   plugins: [],
-}
-
+};
