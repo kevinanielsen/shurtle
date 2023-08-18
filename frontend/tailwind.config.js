@@ -30,6 +30,12 @@ export default {
           900: "hsl(168, 62%, 10%)",
         },
       },
+      fontSize: {
+        sm: "clamp(.75rem, 1.5vw, 1rem)",
+        base: "clamp(1rem, 2vw, 1.5rem)",
+        lg: "clamp(1.5rem, 3vw, 2.5rem)",
+        xl: "clamp(2rem, 4vw, 3.5rem)",
+      },
     },
   },
   plugins: [],

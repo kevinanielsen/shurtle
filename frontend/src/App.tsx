@@ -1,7 +1,9 @@
+import Button from "./components/Button";
+
 function App() {
   return (
-    <main className="w-screen h-screen flex justify-center items-center">
-      <div className="text-5xl font-bold text-dark">Check</div>
+    <main className="w-screen h-screen flex flex-col items-center">
+      <Button variant="sm">Hello!</Button>
     </main>
   );
 }
