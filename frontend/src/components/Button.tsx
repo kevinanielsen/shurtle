@@ -7,6 +7,7 @@ interface ButtonProps {
   color?: "primary" | "secondary";
   label?: string;
   children: ReactNode;
+  onClick?: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -15,11 +16,13 @@ const Button: React.FC<ButtonProps> = ({
   color,
   label,
   children,
+  onClick,
 }) => {
   return (
     <label>
       {label && <p>{label}</p>}
       <button
+        onClick={onClick}
         disabled={disabled}
         className={clsx(
           `
