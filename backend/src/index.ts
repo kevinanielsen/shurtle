@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const ShortenRouter = require("./urls/shorten");
 const UrlRouter = require("./urls/url");
 const RedirectRouter = require("./redirect");
+import cors from "cors";
 
 require("dotenv").config();
 
@@ -25,7 +26,9 @@ async function main() {
   })
 }
 main();
-
+app.use(cors({
+  origin: true,
+}))
 app.use(express.static("public"));
 app.use(express.json()); // for parsing application/json
 app.use("/urls/shorten", ShortenRouter);
