@@ -39,6 +39,7 @@ function App() {
             onClick={() => {
               if (inputRef.current?.value) shortenUrl(inputRef.current?.value);
             }}
+            type="submit"
           >
             Shorten
           </Button>
