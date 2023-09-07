@@ -1,11 +1,5 @@
-import mongoose, { Schema, Document, Model } from "mongoose";
-
-export interface IUrl extends Document {
-  created: Date;
-  originalUrl: string;
-  newUrl: string;
-  creatorIP: string;
-}
+import mongoose, { Schema, Model } from "mongoose";
+import { IUrl } from "../types/UrlInterface";
 
 const UrlSchema: Schema = new Schema({
   created: {
