@@ -35,7 +35,6 @@ function App() {
                   if (inputRef.current?.value) {
                     setLoading(true);
                     shortenUrl(inputRef.current?.value).then((res) => {
-                      console.log(res);
                       setShortenedUrl(`https://backend-zglbcovu3q-ew.a.run.app/${res.data?.newUrl}/`);
                     }).finally(() => setLoading(false));
                   }
