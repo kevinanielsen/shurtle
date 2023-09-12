@@ -1,11 +1,8 @@
 import Navbar from "@/components/navbar";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { useRef } from "react";
-import shortenUrl from "@/actions/shortenUrl";
 import { useState } from "react";
 import LoadingModal from "@/components/LoadingModal";
+import ShortenLink from "./components/shorten-link";
 
 function App() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -27,23 +24,7 @@ function App() {
               <a href={shortenedUrl} className="text-blue-400 w-fit underline" target="_blank">{shortenedUrl}</a>
             </>
           ) : (
-            <>
-              <Label htmlFor="inputLink">Link to shorten</Label>
-              <Input id="inputLink" type="text" ref={inputRef} />
-              <Button
-                onClick={() => {
-                  if (inputRef.current?.value) {
-                    setLoading(true);
-                    shortenUrl(inputRef.current?.value).then((res) => {
-                      setShortenedUrl(`https://backend-zglbcovu3q-ew.a.run.app/${res.data?.newUrl}/`);
-                    }).finally(() => setLoading(false));
-                  }
-                }}
-                type="submit"
-              >
-                Shorten
-              </Button>
-            </>
+            <ShortenLink inputRef={inputRef} setLoading={setLoading} setShortenedUrl={setShortenedUrl} />
           )}
         </div>
       </main>
