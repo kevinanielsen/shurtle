@@ -25,3 +25,4 @@ dev-dist
 *.sln
 *.sw?
 ./dev-dist
+frontend/dev-dist/sw.js
