@@ -29,7 +29,7 @@ const ShortenLink: React.FC<ShortenLinkProps> = ({
             shortenUrl(inputRef.current?.value)
               .then((res) => {
                 if (res.data && res.data.newUrl !== undefined) {
-                  setShortenedUrl(`https://shurtle.site/${res.data.newUrl}/`);
+                  setShortenedUrl(`shurtle.site/${res.data.newUrl}/`);
                 } else {
                   toast({
                     title: "Error!",
