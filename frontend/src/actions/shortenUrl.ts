@@ -7,7 +7,7 @@ export interface ResponseIUrl extends Response {
 
 const shortenUrl = async (inputLink: string) => {
   const shortenedUrl: ResponseIUrl = await axios.post(
-    "https://backend-zglbcovu3q-ew.a.run.app/urls/shorten",
+    "https://shurtle.site/urls/shorten",
     {
       url: inputLink,
     },

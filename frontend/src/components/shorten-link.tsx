@@ -13,7 +13,7 @@ interface ShortenLinkProps {
 const ShortenLink: React.FC<ShortenLinkProps> = ({
   setLoading,
   setShortenedUrl,
-  inputRef
+  inputRef,
 }) => {
   return (
     <>
@@ -25,9 +25,7 @@ const ShortenLink: React.FC<ShortenLinkProps> = ({
             setLoading(true);
             shortenUrl(inputRef.current?.value)
               .then((res) => {
-                setShortenedUrl(
-                  `https://backend-zglbcovu3q-ew.a.run.app/${res.data?.newUrl}/`
-                );
+                setShortenedUrl(`https://shurtle.site/${res.data?.newUrl}/`);
               })
               .finally(() => setLoading(false));
           }
