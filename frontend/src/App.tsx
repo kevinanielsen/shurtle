@@ -18,7 +18,10 @@ function App() {
       <main className="w-screen h-full flex flex-col items-center justify-center">
         <div className="grid w-full max-w-sm items-center gap-1.5">
           {shortenedUrl ? (
-            <Result setShortenedUrl={setShortenedUrl} shortenedUrl={shortenedUrl} />
+            <Result
+              setShortenedUrl={setShortenedUrl}
+              shortenedUrl={shortenedUrl}
+            />
           ) : (
             <ShortenLink
               inputRef={inputRef}

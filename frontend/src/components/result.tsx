@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 interface ResultProps {
   shortenedUrl: string;
-  setShortenedUrl: React.Dispatch<string | null>
+  setShortenedUrl: React.Dispatch<string | null>;
 }
 
 const Result: React.FC<ResultProps> = ({ shortenedUrl, setShortenedUrl }) => {
