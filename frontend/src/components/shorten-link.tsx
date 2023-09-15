@@ -27,23 +27,27 @@ const ShortenLink: React.FC<ShortenLinkProps> = ({
           if (inputRef.current?.value) {
             setLoading(true);
             shortenUrl(inputRef.current?.value)
+              .catch((error: string) => {
+                toast({
+                  title: "Error!",
+                  description: error,
+                });
+              })
               .then((res) => {
-                if (res.data && res.data.newUrl !== undefined) {
+                if (res instanceof Error) {
+                  toast({
+                    title: "Error!",
+                    description: res.message,
+                  });
+                } else if (res && res.data) {
                   setShortenedUrl(`shurtle.site/${res.data.newUrl}/`);
                 } else {
                   toast({
                     title: "Error!",
                     description:
-                      "An error occurred during url-shortening! Reload the page and try again.",
+                      "Something went wrong! Reload the page and try again.",
                   });
                 }
-              })
-              .catch(() => {
-                toast({
-                  title: "Error!",
-                  description:
-                    "An error occurred during url-shortening! Reload the page and try again.",
-                });
               })
               .finally(() => setLoading(false));
           }
