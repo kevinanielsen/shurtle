@@ -1,7 +1,7 @@
 import Navbar from "@/components/navbar";
 import { useRef } from "react";
 import { useState } from "react";
-import LoadingModal from "@/components/LoadingModal";
+import LoadingModal from "@/components/loading-modal";
 import ShortenLink from "@/components/shorten-link";
 import Result from "@/components/result";
 
