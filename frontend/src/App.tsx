@@ -13,10 +13,10 @@ function App() {
   if (loading) return <LoadingModal />;
 
   return (
-    <div style={{ height: "calc(100vh - 100px)" }}>
+    <div style={{ height: "calc(100vh - 190px)" }}>
       <Navbar />
-      <main className="w-screen h-full flex flex-col items-center justify-center">
-        <div className="grid w-full max-w-sm items-center gap-1.5">
+      <main className="w-screen h-full flex items-center justify-center">
+        <div className="grid w-full max-w-sm items-center gap-1.5 mx-4">
           {shortenedUrl ? (
             <Result
               setShortenedUrl={setShortenedUrl}
