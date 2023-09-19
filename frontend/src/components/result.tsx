@@ -15,6 +15,7 @@ const Result: React.FC<ResultProps> = ({ shortenedUrl, setShortenedUrl }) => {
           href={`https://www.${shortenedUrl}`}
           className="text-blue-400 underline text-lg"
           target="_blank"
+          aria-label="Shortened link"
         >
           {shortenedUrl}
         </a>
