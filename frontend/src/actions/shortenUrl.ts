@@ -7,6 +7,8 @@ export interface ResponseIUrl extends Response {
 }
 
 const shortenUrl = async (inputLink: string) => {
+  if (!inputLink.includes("https://")) inputLink = `https://${inputLink}`;
+
   const validUrl = await checkUrl(inputLink);
 
   if (!validUrl) return Error("Link is not valid, please input a working url!");
