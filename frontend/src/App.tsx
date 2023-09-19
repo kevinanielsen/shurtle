@@ -7,7 +7,7 @@ import Result from "@/components/result";
 
 function App() {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [shortenedUrl, setShortenedUrl] = useState<string | null>();
+  const [shortenedUrl, setShortenedUrl] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
   if (loading) return <LoadingModal />;

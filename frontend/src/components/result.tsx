@@ -3,7 +3,7 @@ import CopyLink from "@/components/copy-link";
 
 interface ResultProps {
   shortenedUrl: string;
-  setShortenedUrl: React.Dispatch<string | null>;
+  setShortenedUrl: React.Dispatch<string>;
 }
 
 const Result: React.FC<ResultProps> = ({ shortenedUrl, setShortenedUrl }) => {
@@ -22,7 +22,7 @@ const Result: React.FC<ResultProps> = ({ shortenedUrl, setShortenedUrl }) => {
       </div>
       <Button
         onClick={() => {
-          setShortenedUrl(null);
+          setShortenedUrl("");
         }}
       >
         New Link
