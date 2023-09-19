@@ -24,33 +24,41 @@ const ShortenLink: React.FC<ShortenLinkProps> = ({
       <Input id="inputLink" type="text" ref={inputRef} />
       <Button
         onClick={() => {
-          if (inputRef.current?.value) {
-            setLoading(true);
-            shortenUrl(inputRef.current?.value)
-              .catch((error: string) => {
+          if (!inputRef.current?.value) {
+            toast({
+              title: "Input is empty. Please insert a link to shorten.",
+            });
+            return;
+          }
+
+          setLoading(true);
+          shortenUrl(inputRef.current?.value)
+            .catch((error: string) => {
+              toast({
+                title: "Error!",
+                description: error,
+                variant: "destructive",
+              });
+            })
+            .then((res) => {
+              if (res instanceof Error) {
                 toast({
                   title: "Error!",
-                  description: error,
+                  description: res.message,
+                  variant: "destructive",
                 });
-              })
-              .then((res) => {
-                if (res instanceof Error) {
-                  toast({
-                    title: "Error!",
-                    description: res.message,
-                  });
-                } else if (res && res.data) {
-                  setShortenedUrl(`shurtle.site/${res.data.newUrl}/`);
-                } else {
-                  toast({
-                    title: "Error!",
-                    description:
-                      "Something went wrong! Reload the page and try again.",
-                  });
-                }
-              })
-              .finally(() => setLoading(false));
-          }
+              } else if (res?.data) {
+                setShortenedUrl(`shurtle.site/${res.data.newUrl}/`);
+              } else {
+                toast({
+                  title: "Error!",
+                  description:
+                    "Something went wrong! Reload the page and try again.",
+                  variant: "destructive",
+                });
+              }
+            })
+            .finally(() => setLoading(false));
         }}
         type="submit"
       >
