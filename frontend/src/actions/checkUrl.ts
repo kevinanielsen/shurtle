@@ -1,4 +1,6 @@
-const checkUrl = async (inputUrl: string) => {
+const checkUrl: (inputUrl: string) => Promise<boolean> = async (
+  inputUrl: string
+) => {
   let url;
 
   try {
