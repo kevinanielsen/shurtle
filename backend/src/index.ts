@@ -13,7 +13,7 @@ const PORT = (process.env.PORT as string) || 4000;
 
 async function main() {
   mongoose.connect(
-    "mongodb+srv://keveran:keveran@cluster0.pqfevld.mongodb.net/",
+    process.env.MONGO_STRING,
     {
       dbName: "test",
       useNewUrlParser: true,
