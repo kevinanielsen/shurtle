@@ -25,7 +25,7 @@ router.post("/", async (req: Request, res: Response) => {
 
       const dbResponse = await Url.create(url);
 
-      return res.status(200).json({ dbResponse });
+      return res.status(200).json(dbResponse);
     }
 
     return res.status(200).json(entry[0]);
