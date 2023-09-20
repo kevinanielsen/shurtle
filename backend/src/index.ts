@@ -5,6 +5,7 @@ const ShortenRouter = require("./urls/shorten");
 const UrlRouter = require("./urls/url");
 const RedirectRouter = require("./redirect");
 import cors from "cors";
+const requestIp = require("request-ip");
 
 require("dotenv").config();
 
@@ -36,8 +37,9 @@ app.use("/urls/url", UrlRouter);
 app.use("/", RedirectRouter);
 
 app.get("/", (req: Request, res: Response) => {
-  const ipAdress = req.socket.remoteAddress;
-  res.json(`Your IP is: ${ipAdress}`).status(200);
+  const clientIp = requestIp.getClientIp(req);
+  console.log(clientIp)
+  res.json(`Your IP is: ${clientIp}`).status(200);
 });
 
 app.listen(PORT, () => {
