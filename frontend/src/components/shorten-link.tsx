@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import shortenUrl from "@/actions/shortenUrl";
 import { useToast } from "@/components/ui/use-toast";
+import { useTranslation } from "react-i18next";
 
 interface ShortenLinkProps {
   setLoading: React.Dispatch<boolean>;
@@ -18,15 +19,17 @@ const ShortenLink: React.FC<ShortenLinkProps> = ({
 }) => {
   const { toast } = useToast();
 
+  const { t } = useTranslation();
+
   return (
     <>
-      <Label htmlFor="inputLink">Link to shorten</Label>
+      <Label htmlFor="inputLink">{t("shorten-link.input-label")}</Label>
       <Input id="inputLink" type="text" ref={inputRef} />
       <Button
         onClick={() => {
           if (!inputRef.current?.value) {
             toast({
-              title: "Input is empty. Please insert a link to shorten.",
+              title: t("toasts.empty-input"),
             });
             return;
           }
@@ -36,25 +39,24 @@ const ShortenLink: React.FC<ShortenLinkProps> = ({
             .catch((error: Error) => {
               console.log(error);
               toast({
-                title: "Error!",
-                description: "Something went wrong! Reload the page and try again.",
+                title: t("toasts.error"),
+                description: t("toasts.standard-error"),
                 variant: "destructive",
               });
             })
             .then((res) => {
               if (res instanceof Error) {
                 toast({
-                  title: "Error!",
-                  description: res.message,
+                  title: t("toasts.error"),
+                  description: t(res.message),
                   variant: "destructive",
                 });
               } else if (res?.data) {
                 setShortenedUrl(`shurtle.site/${res.data.newUrl}/`);
               } else {
                 toast({
-                  title: "Error!",
-                  description:
-                    "Something went wrong! Reload the page and try again.",
+                  title: t("toasts.error"),
+                  description: t("toasts.standard-error"),
                   variant: "destructive",
                 });
               }
@@ -63,7 +65,7 @@ const ShortenLink: React.FC<ShortenLinkProps> = ({
         }}
         type="submit"
       >
-        Shorten
+        {t("shorten-link.button-label")}
       </Button>
     </>
   );
