@@ -8,10 +8,10 @@ import { Analytics } from "@vercel/analytics/react";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-      <ThemeProvider>
-        <App />
-        <Analytics />
-        <Toaster />
-      </ThemeProvider>
+    <ThemeProvider>
+      <App />
+      <Analytics />
+      <Toaster />
+    </ThemeProvider>
   </React.StrictMode>
 );
