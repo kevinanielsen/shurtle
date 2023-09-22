@@ -1,0 +1,23 @@
+{
+  "translation": {
+    "shorten-link": {
+      "input-label": "Link to shorten",
+      "shorten-button": "Shorten"
+    },
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "result": {
+      "result-label": "Your result",
+      "new-link-button": "New Link"
+    },
+    "toasts": {
+      "standard-error": "Something went wrong! Reload the page and try again.",
+      "error": "Error",
+      "empty-input": "Input is empty. Please insert a link to shorten.",
+      "copy-success": "Succesfully copied link"
+    }
+  }
+}

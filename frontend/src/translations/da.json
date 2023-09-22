@@ -1,0 +1,23 @@
+{
+  "translation": {
+    "shorten-link": {
+      "input-label": "Link der forkortes",
+      "shorten-button": "Forkort"
+    },
+    "theme": {
+      "light": "Lys",
+      "dark": "Mørk",
+      "system": "System"
+    },
+    "result": {
+      "result-label": "Dit resultat",
+      "new-link-button": "Nyt Link"
+    },
+    "toasts": {
+      "standard-error": "Noget gik galt! Genindlæs siden og prøv igen.",
+      "error": "Fejl",
+      "empty-input": "Feltet er tomt. Indsæt et link og prøv igen.",
+      "copy-success": "Link kopieret!"
+    }
+  }
+}
