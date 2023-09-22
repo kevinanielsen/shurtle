@@ -2,7 +2,7 @@
   "translation": {
     "shorten-link": {
       "input-label": "Link der forkortes",
-      "shorten-button": "Forkort"
+      "button-label": "Forkort"
     },
     "theme": {
       "light": "Lys",
@@ -15,9 +15,10 @@
     },
     "toasts": {
       "standard-error": "Noget gik galt! Genindlæs siden og prøv igen.",
-      "error": "Fejl",
+      "error": "Fejl!",
       "empty-input": "Feltet er tomt. Indsæt et link og prøv igen.",
-      "copy-success": "Link kopieret!"
+      "copy-success": "Link kopieret!",
+      "invalid-link": "Linket er ikke gyldigt, indsæt et link, der virker og prøv igen. Sørg for at linket starter med 'http://' eller 'https://'"
     },
     "languages": {
       "english": "Engelsk",

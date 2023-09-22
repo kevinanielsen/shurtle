@@ -2,7 +2,7 @@
   "translation": {
     "shorten-link": {
       "input-label": "Link to shorten",
-      "shorten-button": "Shorten"
+      "button-label": "Shorten"
     },
     "theme": {
       "light": "Light",
@@ -15,9 +15,10 @@
     },
     "toasts": {
       "standard-error": "Something went wrong! Reload the page and try again.",
-      "error": "Error",
+      "error": "Error!",
       "empty-input": "Input is empty. Please insert a link to shorten.",
-      "copy-success": "Succesfully copied link"
+      "copy-success": "Succesfully copied link",
+      "invalid-link": "Link is not valid, please input a working url! Make sure that the url starts with http:// or https://"
     },
     "languages": {
       "english": "English",

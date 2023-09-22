@@ -6,12 +6,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import i18n from "@/i18n";
+import { useTranslation } from "react-i18next";
 import { Globe } from "lucide-react";
 
 const LanguageToggle = () => {
   const changeLanguageHandler = (lang: string) => {
     i18n.changeLanguage(lang);
   };
+
+  const { t } = useTranslation();
 
   return (
     <DropdownMenu>
@@ -23,10 +26,10 @@ const LanguageToggle = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => changeLanguageHandler("da")}>
-          <span>🇩🇰 Danish</span>
+          <span>🇩🇰 {t("languages.danish")}</span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => changeLanguageHandler("en")}>
-          <span>🇬🇧 English</span>
+          <span>🇬🇧 {t("languages.english")}</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
