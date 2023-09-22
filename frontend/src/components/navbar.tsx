@@ -1,5 +1,6 @@
 import { ModeToggle } from "@/components/mode-toggle";
 import { Separator } from "@/components/ui/separator";
+import LanguageToggle from "@/components/language-toggle";
 
 const Navbar = () => {
   return (
@@ -8,7 +9,10 @@ const Navbar = () => {
         <a href="/">
           <img src="shurtle-icon.svg" width="40" className="rounded" />
         </a>
-        <ModeToggle />
+        <div className="flex gap-4">
+          <LanguageToggle />
+          <ModeToggle />
+        </div>
       </nav>
       <Separator />
     </>
