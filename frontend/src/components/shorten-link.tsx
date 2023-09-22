@@ -33,10 +33,11 @@ const ShortenLink: React.FC<ShortenLinkProps> = ({
 
           setLoading(true);
           shortenUrl(inputRef.current?.value)
-            .catch((error: string) => {
+            .catch((error: Error) => {
+              console.log(error);
               toast({
                 title: "Error!",
-                description: error,
+                description: "Something went wrong! Reload the page and try again.",
                 variant: "destructive",
               });
             })

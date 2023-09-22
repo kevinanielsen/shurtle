@@ -16,7 +16,7 @@ const shortenUrl = async (inputLink: string) => {
   }
 
   const shortenedUrl: ResponseIUrl = await axios.post(
-    process.env.BACKEND_URL || "https://shurtle.site/urls/shorten",
+    "https://shurtle.site/urls/shorten" ,
     {
       url: inputLink,
     },
