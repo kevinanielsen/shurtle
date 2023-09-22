@@ -18,6 +18,10 @@
       "error": "Fejl",
       "empty-input": "Feltet er tomt. Indsæt et link og prøv igen.",
       "copy-success": "Link kopieret!"
+    },
+    "languages": {
+      "english": "Engelsk",
+      "danish": "Dansk"
     }
   }
 }

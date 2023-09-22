@@ -18,6 +18,10 @@
       "error": "Error",
       "empty-input": "Input is empty. Please insert a link to shorten.",
       "copy-success": "Succesfully copied link"
+    },
+    "languages": {
+      "english": "English",
+      "danish": "Danish"
     }
   }
 }
