@@ -23,7 +23,7 @@ export default defineConfig({
         display: "standalone",
         background_color: "#fff",
         theme_color: "#10ABF9",
-        description: "A simple URL-shortener",
+        description: "A simple and modern URL-shortener",
         icons: [
           {
             src: "pwa-64x64.png",
