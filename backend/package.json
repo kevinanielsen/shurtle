@@ -31,8 +31,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "mongoose": "^7.6.3",
     "mongodb": "^5.9.1",
-    "mongoose": "^7.4.2",
     "nanoid": "^3.3.7",
     "request-ip": "^3.3.0"
   }
