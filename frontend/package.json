@@ -22,7 +22,7 @@
     "clsx": "^2.0.0",
     "i18next": "^23.7.1",
     "jsonwebtoken": "^9.0.2",
-    "lucide-react": "^0.302.0",
+    "lucide-react": "^0.303.0",
     "mongoose": "^7.6.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
