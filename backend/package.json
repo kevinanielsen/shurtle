@@ -32,7 +32,7 @@
     "express": "^4.19.2",
     "dotenv": "^16.3.2",
     "mongoose": "^8.0.0",
-    "mongodb": "^6.0.0",
+    "mongodb": "^6.5.0",
     "nanoid": "^3.3.7",
     "request-ip": "^3.3.0"
   }
